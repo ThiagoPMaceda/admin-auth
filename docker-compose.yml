@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  admin-auth:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: admin-auth-container
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./nodemon.json:/usr/src/app/nodemon.json
+    expose:
+      - '8080'
+    ports:
+      - '8080:8080'
+      - '9229:9229'
+    command: yarn start

@@ -1,0 +1,10 @@
+FROM node:14
+
+WORKDIR usr/src/app
+
+ADD package*.json ./
+ADD yarn.lock ./
+
+RUN yarn
+
+USER node
