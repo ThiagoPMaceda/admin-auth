@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "nodemon -e ts --exec 'tsc -p ./tsconfig.json && node ./dist/index.js' "
+    "start": "nodemon -e ts --exec 'tsc -p ./tsconfig.json && node ./dist/server.js' "
   },
   "husky": {
     "hooks": {
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@types/express": "^4.17.8",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
   }
 }
