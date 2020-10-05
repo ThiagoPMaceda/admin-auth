@@ -2,13 +2,15 @@ version: '3.8'
 
 services:
   admin-auth:
+    container_name: admin-auth-container
+    volumes:
+      - ./node_modules:/usr/app/node_modules
+      - ./:/usr/app
+    restart: unless-stopped
+    working_dir: /usr/app
     build:
       context: .
       dockerfile: Dockerfile.dev
-    container_name: admin-auth-container
-    volumes:
-      - ./src:/usr/src/app/src
-      - ./nodemon.json:/usr/src/app/nodemon.json
     expose:
       - '8080'
     ports:
